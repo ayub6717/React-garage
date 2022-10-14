@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import Form from './components/Form';
 
 function App() {
