@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import ClickCounter from './components/ClickCounter';
 import Counter from './components/Counter';
 import HoverCounter from './components/HoverCounter';
