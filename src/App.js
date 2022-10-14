@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import Bracket from './components/composition/Bracket';
 import Emoji from './components/composition/Emoji';
 import Text from './components/composition/Text';
