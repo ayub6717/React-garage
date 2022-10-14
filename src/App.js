@@ -1,28 +1,40 @@
 import React from 'react';
-// import Calculator from './components/Calculator';
-import Todo from './components/Todo';
-import './App.css';
-// import Input from './components/Input';
-// import Clock from './components/Clock';
-// import ClockList from './components/ClockList';
-// import Props from './components/Props';
+import ClickCounter from './components/ClickCounter';
+import Counter from './components/Counter';
+import Section from './components/Section';
+import ThemeContext from './contexts/themeContext';
 
-function App() {
-    // const quantities = [1, 2, 3];
-    return (
-        <div>
-            {/* <Clock locale="bn-BD" /> */}
-            {/* <Props name="Rohan" />
-            <Props name="Afnan" />
-            <Props name="Ayub" />
-            <Props name="Afnan" />
-            <ClockList quantities={quantities} /> */}
-            {/* <Form /> */}
-            {/* <Calculator /> */}
-            {/* <Input /> */}
-            <Todo />
-        </div>
-    );
+export default class App extends React.Component {
+    state = {
+        // eslint-disable-next-line react/no-unused-state
+        theme: 'light',
+        // eslint-disable-next-line react/no-unused-state
+        switchTheme: () => {
+            this.setState(({ theme }) => {
+                if (theme === 'dark') {
+                    return {
+                        theme: 'light',
+                    };
+                }
+                return {
+                    theme: 'dark',
+                };
+            });
+        },
+    };
+
+    render() {
+        return (
+            <div className="app">
+                <Counter>
+                    {(counter, incrementCount) => (
+                        <ClickCounter count={counter} incrementCount={incrementCount} />
+                    )}
+                </Counter>
+                <ThemeContext.Provider value={this.state}>
+                    <Section />
+                </ThemeContext.Provider>
+            </div>
+        );
+    }
 }
-
-export default App;
