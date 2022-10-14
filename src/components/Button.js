@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 
 class Button extends React.Component {
@@ -16,7 +15,7 @@ class Button extends React.Component {
         const { change, locale } = this.props;
         return (
             <button type="button" onClick={() => change(locale)}>
-                {locale === 'bn-BD' ? 'en-US' : 'bn-BD '}
+                Click here
             </button>
         );
     }
