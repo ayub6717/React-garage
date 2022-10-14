@@ -1,26 +1,20 @@
-import React from 'react';
-// import Calculator from './components/Calculator';
-import Todo from './components/Todo';
-import './App.css';
-// import Input from './components/Input';
-// import Clock from './components/Clock';
-// import ClockList from './components/ClockList';
-// import Props from './components/Props';
+import ClickCounter from './components/ClickCounter';
+import Counter from './components/Counter';
+import HoverCounter from './components/HoverCounter';
 
 function App() {
-    // const quantities = [1, 2, 3];
     return (
-        <div>
-            {/* <Clock locale="bn-BD" /> */}
-            {/* <Props name="Rohan" />
-            <Props name="Afnan" />
-            <Props name="Ayub" />
-            <Props name="Afnan" />
-            <ClockList quantities={quantities} /> */}
-            {/* <Form /> */}
-            {/* <Calculator /> */}
-            {/* <Input /> */}
-            <Todo />
+        <div className="app">
+            <Counter>
+                {(counter, incrementCount) => (
+                    <ClickCounter count={counter} incrementCount={incrementCount} />
+                )}
+            </Counter>
+            <Counter>
+                {(counter, incrementCount) => (
+                    <HoverCounter count={counter} incrementCount={incrementCount} />
+                )}
+            </Counter>
         </div>
     );
 }
