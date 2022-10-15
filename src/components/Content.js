@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { useContext } from 'react';
 import ThemeContext from '../contexts/themeContext';
 import Counter from './Counter';
